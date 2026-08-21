@@ -1,0 +1,225 @@
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import 'tailwindcss';
+
+/* Light palette — Caliber navy/teal */
+:root,
+:root.light {
+  color-scheme: light;
+  --color-accent: #319795;
+  --color-accent-muted: rgba(49, 151, 149, 0.22);
+  --color-brand-navy: #1a365d;
+  --color-bg: #f8f7f4;
+  --color-grouped-bg: #ffffff;
+  --color-elevated: #edf7f6;
+  --color-label: #1a202c;
+  --color-secondary-label: rgba(26, 32, 44, 0.6);
+  --color-separator: rgba(26, 54, 93, 0.12);
+  --color-sidebar: #1f2937;
+  --color-sidebar-text: #f7fafc;
+  --color-sidebar-muted: rgba(255, 255, 255, 0.65);
+  --color-status-compliant: #38a169;
+  --color-status-expiring: #d69e2e;
+  --color-status-danger: #e53e3e;
+  --color-status-progress: #319795;
+  --color-status-missing: #718096;
+  --color-status-waived: #805ad5;
+  --color-status-compliant-bg: rgba(56, 161, 105, 0.14);
+  --color-status-expiring-bg: rgba(214, 158, 46, 0.14);
+  --color-status-danger-bg: rgba(229, 62, 62, 0.14);
+  --color-status-progress-bg: rgba(49, 151, 149, 0.14);
+  --color-status-missing-bg: rgba(113, 128, 150, 0.14);
+  --color-status-waived-bg: rgba(128, 90, 213, 0.14);
+}
+
+/* Dark palette */
+:root.dark {
+  color-scheme: dark;
+  --color-accent: #4fd1c5;
+  --color-accent-muted: rgba(79, 209, 197, 0.18);
+  --color-brand-navy: #1a365d;
+  --color-bg: #0f1419;
+  --color-grouped-bg: #1a202c;
+  --color-elevated: #2d3748;
+  --color-label: #f7fafc;
+  --color-secondary-label: rgba(247, 250, 252, 0.6);
+  --color-separator: rgba(255, 255, 255, 0.1);
+  --color-sidebar: #111827;
+  --color-sidebar-text: #f7fafc;
+  --color-sidebar-muted: rgba(255, 255, 255, 0.65);
+  --color-status-compliant: #48bb78;
+  --color-status-expiring: #ecc94b;
+  --color-status-danger: #fc8181;
+  --color-status-progress: #4fd1c5;
+  --color-status-missing: #a0aec0;
+  --color-status-waived: #b794f4;
+  --color-status-compliant-bg: rgba(72, 187, 120, 0.18);
+  --color-status-expiring-bg: rgba(236, 201, 75, 0.18);
+  --color-status-danger-bg: rgba(252, 129, 129, 0.18);
+  --color-status-progress-bg: rgba(79, 209, 197, 0.18);
+  --color-status-missing-bg: rgba(160, 174, 192, 0.18);
+  --color-status-waived-bg: rgba(183, 148, 244, 0.18);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    color-scheme: dark;
+    --color-accent: #4fd1c5;
+    --color-accent-muted: rgba(79, 209, 197, 0.18);
+    --color-brand-navy: #1a365d;
+    --color-bg: #0f1419;
+    --color-grouped-bg: #1a202c;
+    --color-elevated: #2d3748;
+    --color-label: #f7fafc;
+    --color-secondary-label: rgba(247, 250, 252, 0.6);
+    --color-separator: rgba(255, 255, 255, 0.1);
+    --color-sidebar: #111827;
+  --color-sidebar-text: #f7fafc;
+  --color-sidebar-muted: rgba(255, 255, 255, 0.65);
+    --color-status-compliant: #48bb78;
+    --color-status-expiring: #ecc94b;
+    --color-status-danger: #fc8181;
+    --color-status-progress: #4fd1c5;
+    --color-status-missing: #a0aec0;
+    --color-status-waived: #b794f4;
+    --color-status-compliant-bg: rgba(72, 187, 120, 0.18);
+    --color-status-expiring-bg: rgba(236, 201, 75, 0.18);
+    --color-status-danger-bg: rgba(252, 129, 129, 0.18);
+    --color-status-progress-bg: rgba(79, 209, 197, 0.18);
+    --color-status-missing-bg: rgba(160, 174, 192, 0.18);
+    --color-status-waived-bg: rgba(183, 148, 244, 0.18);
+  }
+}
+
+@theme {
+  --color-accent: var(--color-accent);
+  --color-accent-muted: var(--color-accent-muted);
+  --color-brand: var(--color-brand-navy);
+  --color-bg: var(--color-bg);
+  --color-grouped: var(--color-grouped-bg);
+  --color-elevated: var(--color-elevated);
+  --color-label: var(--color-label);
+  --color-secondary-label: var(--color-secondary-label);
+  --color-separator: var(--color-separator);
+  --color-sidebar: var(--color-sidebar);
+  --color-sidebar-text: var(--color-sidebar-text);
+  --color-sidebar-muted: var(--color-sidebar-muted);
+  --color-status-compliant: var(--color-status-compliant);
+  --color-status-expiring: var(--color-status-expiring);
+  --color-status-danger: var(--color-status-danger);
+  --color-status-progress: var(--color-status-progress);
+  --color-status-missing: var(--color-status-missing);
+  --color-status-waived: var(--color-status-waived);
+  --color-status-compliant-bg: var(--color-status-compliant-bg);
+  --color-status-expiring-bg: var(--color-status-expiring-bg);
+  --color-status-danger-bg: var(--color-status-danger-bg);
+  --color-status-progress-bg: var(--color-status-progress-bg);
+  --color-status-missing-bg: var(--color-status-missing-bg);
+  --color-status-waived-bg: var(--color-status-waived-bg);
+  --font-sans: Inter, system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--color-bg);
+  color: var(--color-label);
+  -webkit-font-smoothing: antialiased;
+}
+
+aside select option {
+  background-color: var(--color-sidebar);
+  color: var(--color-sidebar-text);
+}
+
+aside.sidebar-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.28) transparent;
+}
+
+aside.sidebar-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+aside.sidebar-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+aside.sidebar-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+}
+
+aside.sidebar-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.36);
+}
+
+aside.sidebar-scroll::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.875em;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.375rem;
+  background: color-mix(in srgb, var(--color-separator) 35%, transparent);
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.28s ease-out;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.2s ease-out;
+}
+
+@media print {
+  aside,
+  header,
+  .no-print,
+  [data-print-hide] {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: #1a202c !important;
+  }
+
+  main {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+}
